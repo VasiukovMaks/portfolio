@@ -38,12 +38,21 @@ module.exports = function(grunt) {
                 dest: 'dest/index.js',
             },
         },
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'src/image',
+                src: '**',
+                dest: 'dest/image',
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', ['pug', 'less', 'concat', 'watch']);
 
