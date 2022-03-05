@@ -1,0 +1,14 @@
+-
+    const headerItems = [
+        {ru: 'Главная', en: 'Home'},
+        {ru: 'Обо мне', en: 'About me'},
+        {ru: 'Навыки', en: 'Skills'},
+        {ru: 'Портфолио', en: 'Portfolio'},
+        {ru: 'Контактны', en: 'Contacts'},
+    ]
+
+header.header
+    each item in headerItems
+        .header_item
+            a(lang='en') #{item.en}
+            a(lang='ru') #{item.ru}
