@@ -5,9 +5,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #828282;
+  border-bottom: 1px solid @gray;
+  background-color: white;
+  max-width: inherit;
   &_item {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 500;
     padding: 0 10px;
     color: @gray;
+    &:hover {
+      color: @black-main;
+      font-weight: 600;
+    }
+  }
+  &_fixed {
+    position: fixed;
   }
 }

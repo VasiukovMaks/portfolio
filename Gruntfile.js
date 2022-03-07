@@ -15,10 +15,10 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['src/**/*.pug', 'src/**/*.less'],
-                tasks: ['pug', 'less'],
+                files: ['src/**/*.pug', 'src/**/*.less', "src/**/*.js"],
+                tasks: ['concat', 'less', 'pug'],
                 options: {
-                    spawn: false,
+                    livereload: true
                 },
             },
         },
@@ -41,10 +41,22 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 expand: true,
-                cwd: 'src/image',
-                src: '**',
-                dest: 'dest/image',
+                cwd: 'src/',
+                src: ['image/**', 'fonts/**'],
+                dest: 'dest/',
             },
+        },
+        connect: {
+            server: {
+                options: {
+                    protocol: "http",
+                    hostname: "localhost",
+                    port: 9009,
+                    base: 'dest/',
+                    open: true,
+                    livereload: true
+                }
+            }
         },
     });
 
@@ -53,7 +65,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['pug', 'less', 'concat', 'watch']);
-
+    grunt.registerTask('default', ['copy', 'pug', 'less', 'concat', 'connect:server', 'watch']);
+    grunt.registerTask('dev', ['copy', 'pug', 'less', 'concat', 'connect:server', 'watch']);
 };
