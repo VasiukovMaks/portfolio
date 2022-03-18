@@ -9,8 +9,8 @@ html(lang="en")
         include pug/header
         main.js-main
             include pug/home
-            .js-about
-            .js-skills
-            .js-portfolio
-            .js-contacts
+            include pug/about
+            .js-skills#skills
+            .js-portfolio#portfolio
+            .js-contacts#contacts
         script(src="./index.js")

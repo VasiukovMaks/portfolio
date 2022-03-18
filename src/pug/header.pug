@@ -1,14 +1,14 @@
 -
     const headerItems = [
-        {ru: 'Главная', en: 'Home'},
-        {ru: 'Обо мне', en: 'About me'},
-        {ru: 'Навыки', en: 'Skills'},
-        {ru: 'Портфолио', en: 'Portfolio'},
-        {ru: 'Контактны', en: 'Contacts'},
+        {ru: 'Главная', en: 'Home', link: 'home'},
+        {ru: 'Обо мне', en: 'About me', link: 'about'},
+        {ru: 'Навыки', en: 'Skills', link: 'skills'},
+        {ru: 'Портфолио', en: 'Portfolio', link: 'portfolio'},
+        {ru: 'Контакты', en: 'Contacts', link: 'contacts'},
     ]
 
 header.header.js-header
     each item in headerItems
         .header_item
-            a(lang='en') #{item.en}
-            a(lang='ru') #{item.ru}
+            a(lang='en' href='#'+item.link) #{item.en}
+            a(lang='ru' href='#'+item.link) #{item.ru}
