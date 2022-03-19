@@ -1,21 +1,8 @@
-@import "reset";
-@import "fonts";
-@import "colors";
+@import "common/reset";
+@import "common/fonts";
+@import "common/colors";
+@import "common/common";
 
-html {
-  scroll-behavior: smooth;
-}
-
-html[lang="ru"] [lang="en"] {
-  display: none;
-}
-html[lang="en"] [lang="ru"] {
-  display: none;
-}
-main > * {
-  height: 500px;
-}
-
-@import "header";
-@import "home";
-@import "about";
+@import "blocks/header";
+@import "blocks/home";
+@import "blocks/about";
