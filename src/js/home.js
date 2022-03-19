@@ -1,5 +1,5 @@
-const buttons = document.querySelectorAll('.home__content_language button'),
-  html = document.getElementsByTagName('html')[0];
+const buttons = document.querySelectorAll('.js-languages-buttons button'),
+      html = document.getElementsByTagName('html')[0];
 
 Array.from(buttons).forEach((button)=>{
   button.addEventListener('click', (e)=>{

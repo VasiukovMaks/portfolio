@@ -1,6 +1,6 @@
-.header {
-  height: 88px;
+.nav {
   width: 100%;
+  height: 88px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,7 +9,7 @@
   background-color: white;
   max-width: inherit;
   z-index: 2;
-  &_item {
+  &__link {
     font-size: 18px;
     line-height: 23px;
     font-weight: 500;
@@ -20,12 +20,12 @@
       color: @black-main;
       font-weight: 600;
     }
+    &_active {
+      color: @black-main;
+      font-weight: 600;
+    }
   }
   &_fixed {
     position: fixed;
-  }
-  .active {
-    color: @black-main;
-    font-weight: 600;
   }
 }

@@ -6,35 +6,34 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 45px 0;
+  }
 
-    &_name {
-      line-height: 59px;
-      font-size: 48px;
-      color: @black-main;
-      white-space: pre-line;
-      word-wrap: break-word;
-    }
-
-    &_language {
-      transform: rotate(-90deg);
-      position: relative;
-      left: 20px;
-      bottom: 20px;
-      button {
-        background: none;
-        border: 0;
-        cursor: pointer;
-        p {
-          color: @gray;
-        }
-        p.eng, p.ru {
-          color: @black-main;
-          font-weight: 700;
-        }
+  &__name {
+    line-height: 59px;
+    font-size: 48px;
+    color: @black-main;
+    white-space: pre-line;
+    word-wrap: break-word;
+  }
+  &__languages-buttons {
+    transform: rotate(-90deg);
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+    button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      p {
+        color: @gray;
+      }
+      p.eng, p.ru {
+        color: @black-main;
+        font-weight: 700;
       }
     }
   }
-  &_img {
+  &__img {
     img {
       width: 100%;
     }

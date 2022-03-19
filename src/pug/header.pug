@@ -7,8 +7,8 @@
         {ru: 'Контакты', en: 'Contacts', link: 'contacts'},
     ]
 
-header.header.js-header
+header.nav.js-navigation
     each item in headerItems
-        .header_item
+        .nav__link
             a(lang='en' href='#'+item.link) #{item.en}
             a(lang='ru' href='#'+item.link) #{item.ru}

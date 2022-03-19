@@ -1,13 +1,8 @@
-let main = document.getElementsByClassName('js-main')[0];
-let header = document.getElementsByClassName('js-header')[0];
-const mainElements = [
-    document.getElementsByClassName('js-home')[0],
-    document.getElementsByClassName('js-about')[0],
-    document.getElementsByClassName('js-skills')[0],
-    document.getElementsByClassName('js-portfolio')[0],
-    document.getElementsByClassName('js-contacts')[0],
-].reverse(),
-  headerElements = Array.prototype.slice.call( document.getElementsByClassName('header_item') ).reverse();
+let main = document.getElementsByClassName('js-main')[0],
+    header = document.getElementsByClassName('js-navigation')[0];
+
+const blocks = Array.prototype.slice.call( document.getElementsByClassName('js-block') ).reverse(),
+      navLinks = Array.prototype.slice.call( document.getElementsByClassName('nav__link') ).reverse();
 
 window.addEventListener('scroll', (e)=> {
     throttle(fixHeader, 100)();
@@ -16,29 +11,29 @@ window.addEventListener('scroll', (e)=> {
 
 const fixHeader = () => {
   if(this.scrollY > 1) {
-    header.classList.add('header_fixed')
+    header.classList.add('nav_fixed')
     main.setAttribute('style',`padding-top: ${header.clientHeight}px`)
   } else {
-    header.classList.remove('header_fixed')
+    header.classList.remove('nav_fixed')
     main.removeAttribute('style')
   }
 }
 
 const setActiveSection = () => {
-  mainElements.some((element, index)=>{
-    if (getTopPositionByWindow(element.getBoundingClientRect()) < getCenterWindow()){
-      headerElements.forEach((elem) => elem.classList.remove('active'));
-      headerElements[index].classList.add('active')
+  blocks.some((element, index)=>{
+    if (getElementPositionByWindow(element.getBoundingClientRect()) < getCenterScreen()){
+      navLinks.forEach((elem) => elem.classList.remove('nav__link_active'));
+      navLinks[index].classList.add('nav__link_active')
       return true
     }
   })
 }
 
-const getTopPositionByWindow = (rect) => {
+const getElementPositionByWindow = (rect) => {
   return rect.top + window.pageYOffset || document.documentElement.scrollTop
 }
 
-const getCenterWindow = () => {
+const getCenterScreen = () => {
   return document.documentElement.clientHeight / 2 + (window.pageYOffset || document.documentElement.scrollTop)
 }
 
